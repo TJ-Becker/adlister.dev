@@ -18,7 +18,7 @@ function pageController() {
 <!--include the navbar partial-->
 <div id="wrapper">
     <form method="get" action="">
-        <input type="text" id="df" value=""/>
+        <input type="text" id="df" />
         <select>
             <option>all</option>
             <option>rarity</option>
