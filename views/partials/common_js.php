@@ -7,8 +7,9 @@
     // attribute could be an array?????
     var attributes = ['rarity', 'playerClass', 'cardSet', 'type', 'name', 'race', 'mechanics', 'cost', 'text'];
     var cardImages = [];
-    var search = '8';
+    var search = 'war';
     console.log(search.toLowerCase());
+//    var searchEngine = function()
 
     $.get('/cards.json', {
         data: {}
