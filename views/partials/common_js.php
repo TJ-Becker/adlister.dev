@@ -27,14 +27,13 @@
     // relevant attribute types: rarity, playerClass, cardSet, type, name, cardId, cost, race, mechanics.name/text.strposition() for spells with mechanics
     // attribute could be an array?????
     var attributes = ['rarity', 'playerClass', 'cardSet', 'type', 'name', 'race', 'mechanics', 'cost', 'text'];
-    var cardImages = [];
 
     //    console.log(search.toLowerCase());
     var searchEngine = function(attributes, search){
         $.get('/cards.json', {
             data: {}
         }).done(function (data) {
-            cardImages = [];
+            var cardImages = [];
             var sets = Object.keys(data);
             console.log(sets);
             sets.forEach(function (e, i) {            //// iterates through all sets
