@@ -1,7 +1,7 @@
 <?php
 
 // require models
-var_dump(__DIR__ . '/controllers/PageController.php');
+//var_dump(__DIR__ . '/controllers/PageController.php');
 require_once __DIR__ . '/models/User.php';
 
 

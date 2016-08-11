@@ -5,7 +5,6 @@ require_once __DIR__ . '/Model.php';
 class User extends Model {
 
     protected static $table = 'users';
-
     // checks if the attribute being saved is password and hashes it if so
     public function __set($name, $value)
     {
@@ -47,6 +46,7 @@ class User extends Model {
 
         return $instance;
     }
+
 
 
 }
