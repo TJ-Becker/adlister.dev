@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 require_once __DIR__ . '/../bootstrap.php';
 
 ?>
@@ -9,20 +9,19 @@ require_once __DIR__ . '/../bootstrap.php';
     <title>OooLister</title>
     <?php require '../views/partials/head.php'; ?>
 </head>
-<!--img/moon2cropped.png-->
 <body>
 <!--    --><?php //require '../views/partials/navbar.php'; ?>
-    <div class="container-fluid login parallax-window" data-parallax="scroll" data-image-src="moon2cropped.png">
+    <div class="container-fluid login parallax-window" data-parallax="scroll" data-image-src="/img/BRM.jpg">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="panel panel-login" id="blackpanel1">
                     <div class="panel-heading" id="blackpanel2">
                         <div class="row">
                             <div class="col-xs-6">
-                                <a href="#"  style="color: green;" id="login-form-link">LogIn</a>
+                                <a href="#"  style="color: rebeccapurple;" id="login-form-link">LogIn</a>
                             </div>
                             <div class="col-xs-6">
-                                <a href="#" style="color: green;" id="register-form-link">Register</a>
+                                <a href="#" style="color: rebeccapurple;" id="register-form-link">Register</a>
                             </div>
                         </div>
                         <hr>
@@ -52,7 +51,7 @@ require_once __DIR__ . '/../bootstrap.php';
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="text-center">
-                                                    <a style="color: green;" href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                                    <a style="color: rebeccapurple;" href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
                                                 </div>
                                             </div>
                                         </div>

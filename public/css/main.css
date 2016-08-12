@@ -61,7 +61,7 @@ login and register form
     box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
 }
 .panel-login>.panel-heading {
-    color: #00415d;
+    color: rebeccapurple;
     background-color: #fff;
     border-color: #fff;
     text-align:center;
@@ -125,7 +125,7 @@ login and register form
 }
 .forgot-password {
     text-decoration: underline;
-    color: #888;
+    color: rebeccapurple;
 }
 .forgot-password:hover,
 .forgot-password:focus {
@@ -136,7 +136,7 @@ login and register form
 .btn-register {
     background-color: #1CB94E;
     outline: none;
-    color: #fff;
+    color: rebeccapurple;
     font-size: 14px;
     height: auto;
     font-weight: normal;
@@ -164,23 +164,23 @@ Custom login form Css
 }
 #login-submit, #register-submit{
     background-color: black;
-    color: green;
+    color: rebeccapurple;
 }
 
 #login-submit:hover, #register-submit:hover {
-    background-color: green;
+    background-color: rebeccapurple;
     color:black;
 }
 
 
 #remember {
-    color: green;
+    color: rebeccapurple;
 }
 
 
 .greenInput {
-    background-color: green;
-    color: black;
+    background-color: rebeccapurple;
+    color: white;
 
 }
 .greenInput::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -202,10 +202,10 @@ Custom login form Css
 .login {
     /*position: absolute;*/
     padding-top: 15%;
-    height: 700px;
+    height: 850px;
     /*margin-bottom: 2%;*/
 }
 .btn {
-    background-color: green;
+    background-color: rebeccapurple;
     border: none;
 }
