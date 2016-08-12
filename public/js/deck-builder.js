@@ -1,13 +1,14 @@
 var $results = $('#results');
-$results.html('');
-var imgBuilder = function(img) {
-    img.forEach(function (element, index) {
-        $results.append("<img src=" + element + ">");
+var imgBuilder = function(cards) {
+    console.log(cards);
+    $results.html('');
+    cards.forEach(function (element, index) {
+        $results.append("<img src=" + element.img + ">");
     });
 }
 $(document).ready(function() {
     var $search = $('#df');
-    $search.keydown(function (key) {
+    $search.keypress(function (key) {
         clearTimeout($.data(this, 'timer'));
         if (key.keyCode == 13) {
             event.preventDefault();
@@ -18,8 +19,7 @@ $(document).ready(function() {
     function search() {
         var $searchVal = $('#df').val();
         console.log($searchVal);
-        console.log(searchEngine(['name'], $searchVal, 'cardId'));
-        imgBuilder(searchEngine(['name'], $searchVal, 'img'));
+        searchEngine($searchVal);
     }
 });
 
