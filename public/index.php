@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 require_once __DIR__ . '/../bootstrap.php';
 
 ?>
@@ -9,7 +9,6 @@ require_once __DIR__ . '/../bootstrap.php';
     <title>OooLister</title>
     <?php require '../views/partials/head.php'; ?>
 </head>
-<!--img/moon2cropped.png-->
 <body>
     <?php require '../views/partials/navbar.php'; ?>
 
