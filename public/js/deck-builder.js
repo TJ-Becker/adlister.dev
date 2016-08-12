@@ -3,12 +3,17 @@ var imgBuilder = function(cards) {
     console.log(cards);
     $results.html('');
     cards.forEach(function (element, index) {
-        $results.append("<img src=" + element.img + ">");
+        if(index % 4 == 0 && index != 0){
+            $results.append("<img class='col-md-2' style='float: left; clear: left;' src=" + element.img + ' name="' + element.name + '">');
+        } else{
+            $results.append("<img class='col-md-2' style='float: left;' src=" + element.img + ' name="' + element.name + '">');
+
+        }
     });
 }
 $(document).ready(function() {
     var $search = $('#df');
-    $search.keypress(function (key) {
+    $search.keyup(function (key) {
         clearTimeout($.data(this, 'timer'));
         if (key.keyCode == 13) {
             event.preventDefault();
