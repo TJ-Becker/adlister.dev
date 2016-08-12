@@ -1,21 +1,25 @@
+var $results = $('#results');
+$results.html('');
+var imgBuilder = function(img) {
+    img.forEach(function (element, index) {
+        $results.append("<img src=" + element + ">");
+    });
+}
 $(document).ready(function() {
     var $search = $('#df');
     $search.keydown(function (key) {
         clearTimeout($.data(this, 'timer'));
         if (key.keyCode == 13) {
             event.preventDefault();
-            search(true);
         } else {
             $(this).data('timer', setTimeout(search, 500));
         }
     });
-    function search(force) {
-        var existingSearch = $search.val();
-        if (!force && existingSearch.length < 1) {
-            return;
-        }
-        //console.log(existingSearch)
+    function search() {
         var $searchVal = $('#df').val();
-        searchEngine(['name'], $searchVal);
+        console.log($searchVal);
+        console.log(searchEngine(['name'], $searchVal, 'cardId'));
+        imgBuilder(searchEngine(['name'], $searchVal, 'img'));
     }
 });
+

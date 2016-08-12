@@ -19,18 +19,17 @@ function pageController() {
 <div id="wrapper">
     <form method="get" action="">
         <input type="text" id="df" />
-        <select>
-            <option>all</option>
-            <option>rarity</option>
-            <option>playerClass</option>
-            <option>cardSet</option>
-            <option>type</option>
-            <option>name</option>
-            <option>race</option>
-            <option>mechanics</option>
-            <option>cost</option>
-            <option>text</option>
-        </select>
+            <input type="checkbox" value="all">all</input>
+            <input type="checkbox" value="rarity">rarity</input>
+            <input type="checkbox" value="playerClass">playerClass</input>
+            <input type="checkbox" value="cardSet">cardSet</input>
+            <input type="checkbox" value="type">type</input>
+            <input type="checkbox" value="name">name</input>
+            <input type="checkbox" value="race">race</input>
+            <input type="checkbox" value="mechanics">mechanics</input>
+            <input type="checkbox" value="cost">cost</input>
+            <input type="checkbox" value="text">text</input>
+
     </form>
 </div><!-- #wrapper -->
 <div id="results">
