@@ -12,11 +12,11 @@
                 </ul>
 
                 <ul class="nav nav-pills" id="nav">
-                    <li role="presentation" class="navbutton" id="robertkerr"><a class="listItem" href="index.php">Robert Kerr</a></li>
+                    <li role="presentation" class="navbutton" id="robertkerr"><a class="listItem" href="index.php">HearthLister</a></li>
                     <!-- <li role="presentation" class="navbutton blogProjects"><a class="listItem" href="blog.html">Blog</a></li> -->
-                    <li role="presentation" class="navbutton blogProjects"><a class="listItem" href="projects.php">Projects</a></li>
-                    <li role="presentation" class="navbutton" id="contact"><a class="listItem" href="contact.php">Contact</a></li>
-                    <li role="presentation" class="navbutton" id="logIn"><a class="listItem" href="login.php">LogIn</a></li>
+                    <li role="presentation" class="navbutton blogProjects"><a class="listItem" href="projects.php">Decks</a></li>
+                    <li role="presentation" class="navbutton" id="contact"><a class="listItem" href="/views/hearth/deck-builder.php">DeckBuilder</a></li>
+<!--                    <li role="presentation" class="navbutton" id="logIn"><a class="listItem" href="login.php">LogIn</a></li>-->
                 </ul>
             </div>
         </div>

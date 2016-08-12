@@ -23,7 +23,8 @@
     });
 </script>
 <script>
-    var attributes = ['rarity', 'playerClass', 'cardSet', 'type', 'name', 'race', 'mechanics', 'cost', 'text'];
+//    var attributes = ['rarity', 'playerClass', 'cardSet', 'type', 'name', 'race', 'mechanics', 'cost', 'text'];
+    var attributes = ['name'];
     var loopThroughCards = function(set, search, cardsArray) {
         set.forEach(function(card){
             checkCardAgainstInput(card, search, cardsArray);
