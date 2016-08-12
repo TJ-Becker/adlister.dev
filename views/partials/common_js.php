@@ -22,6 +22,96 @@
         });
     });
 </script>
+<script>
+    var attributes = ['rarity', 'playerClass', 'cardSet', 'type', 'name', 'race', 'mechanics', 'cost', 'text'];
+    var loopThroughCards = function(set, search, cardsArray) {
+        set.forEach(function(card){
+            checkCardAgainstInput(card, search, cardsArray);
+        });
+    };
+    var checkCardAgainstInput = function (card, search, cardsArray) {
+        if (card.collectible === true && card.type.toLowerCase() != 'hero') {
+            if(search == '') {
+                cardsArray.push(card);
+            }else{
+            attributes.forEach(function(attribute) {
+                var currentAttribute = card[attribute];
+                if (currentAttribute != null && attribute === 'mechanics'){
+                    currentAttribute.forEach(function (mechanic) {
+
+                        if(mechanic.name.toLowerCase() == search.toLowerCase()){
+                            cardsArray.push(card);
+                        }
+                    })
+                } else if (currentAttribute != null && attribute === 'text' ){
+                    if(currentAttribute.toLowerCase().indexOf(search.toLowerCase()) != -1 && Array.isArray(search.match(/[a-z]/i))){
+                        cardsArray.push(card);
+                    }
+                } else if (attribute == 'cost') {
+                    if(currentAttribute == parseInt(search) && Array.isArray(search.match(/[a-z]/i)) != true){
+                        cardsArray.push(card);
+                    }
+                } else if (currentAttribute != null) {
+                    if(currentAttribute.toLowerCase().indexOf(search.toLowerCase()) != -1){
+                        cardsArray.push(card);
+                    }
+                }
+            })
+            }
+//            cardsArray.forEach(function(e, i){
+//                cards.
+//            })
+            return cardsArray;
+        }
+    };
+    var searchEngine = function(search){
+        $.get('/cards.json', {
+            data: {}
+        }).done(function (data) {
+            var cards = [];
+            var sets = Object.keys(data);
+            for (var i = 0; i < sets.length; i++) {
+                var setName = sets[i];
+               loopThroughCards(data[setName], search, cards);
+            }
+            imgBuilder(cards);
+        });
+    };
+    ////////search function called below//////
+    searchEngine('');
+</script>
+<script>
+    //header resize on scroll
+
+
+
+    $(function(){
+        $('#header_nav').data('size','big');
+    });
+
+    $(window).scroll(function(){
+        if($(document).scrollTop() > 0)
+        {
+            if($('#header_nav').data('size') == 'big')
+            {
+                $('#header_nav').data('size','small');
+                $('#header_nav').stop().animate({
+                    height:'45px'
+                },600);
+            }
+        }
+        else
+        {
+            if($('#header_nav').data('size') == 'small')
+            {
+                $('#header_nav').data('size','big');
+                $('#header_nav').stop().animate({
+                    height:'100px'
+                },600);
+            }
+        }
+    });
+</script>
 <!--<script>-->
 <!--    // relevant attribute types: rarity, playerClass, cardSet, type, name, cardId, cost, race, mechanics.name/text.strposition() for spells with mechanics-->
 <!--    // attribute could be an array?????-->
@@ -77,91 +167,4 @@
 <!--    searchEngine(['name'], '', 'img');-->
 <!---->
 <!--</script>-->
-
-<script>
-    var attributes = ['rarity', 'playerClass', 'cardSet', 'type', 'name', 'race', 'mechanics', 'cost', 'text'];
-    var loopThroughCards = function(set, search, cardsArray) {
-        set.forEach(function(card){
-            checkCardAgainstInput(card, search, cardsArray);
-        });
-    };
-    var checkCardAgainstInput = function (card, search, cardsArray) {
-        if (card.collectible === true && card.type.toLowerCase() != 'hero') {
-            if(search == '') {
-                cardsArray.push(card);
-            }else{
-            attributes.forEach(function(attribute) {
-                var currentAttribute = card[attribute];
-                if (currentAttribute != null && attribute === 'mechanics'){
-                    currentAttribute.forEach(function (mechanic) {
-
-                        if(mechanic.name.toLowerCase() == search.toLowerCase()){
-                            cardsArray.push(card);
-                        }
-                    })
-                } else if (currentAttribute != null && attribute === 'text' ){
-                    if(currentAttribute.toLowerCase().indexOf(search.toLowerCase()) != -1 && Array.isArray(search.match(/[a-z]/i))){
-                        cardsArray.push(card);
-                    }
-                } else if (attribute == 'cost') {
-                    if(currentAttribute == parseInt(search) && Array.isArray(search.match(/[a-z]/i)) != true){
-                        cardsArray.push(card);
-                    }
-                } else if (currentAttribute != null) {
-                    if(currentAttribute.toLowerCase().indexOf(search.toLowerCase()) != -1){
-                        cardsArray.push(card);
-                    }
-                }
-            })
-            }
-            return cardsArray;
-        }
-    };
-    var searchEngine = function(attributes, search){
-        $.get('/cards.json', {
-            data: {}
-        }).done(function (data) {
-            var cards = [];
-            var sets = Object.keys(data);
-            for (var i = 0; i < sets.length; i++) {
-                var setName = sets[i];
-               loopThroughCards(data[setName], search, cards);
-            }
-            console.log(cards);
-        });
-    };
-    ////////search function called below//////
-    searchEngine(attributes, 'karazhan');
-</script>
-<script>
-    //header resize on scroll
-
-
-
-    $(function(){
-        $('#header_nav').data('size','big');
-    });
-
-    $(window).scroll(function(){
-        if($(document).scrollTop() > 0)
-        {
-            if($('#header_nav').data('size') == 'big')
-            {
-                $('#header_nav').data('size','small');
-                $('#header_nav').stop().animate({
-                    height:'45px'
-                },600);
-            }
-        }
-        else
-        {
-            if($('#header_nav').data('size') == 'small')
-            {
-                $('#header_nav').data('size','big');
-                $('#header_nav').stop().animate({
-                    height:'100px'
-                },600);
-            }
-        }
-    });
-</script>
+<script src="js/deck-builder.js"></script>

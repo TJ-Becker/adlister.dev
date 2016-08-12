@@ -1,21 +1,25 @@
+var $results = $('#results');
+var imgBuilder = function(cards) {
+    console.log(cards);
+    $results.html('');
+    cards.forEach(function (element, index) {
+        $results.append("<img src=" + element.img + ">");
+    });
+}
 $(document).ready(function() {
     var $search = $('#df');
-    $search.keydown(function (key) {
+    $search.keypress(function (key) {
         clearTimeout($.data(this, 'timer'));
         if (key.keyCode == 13) {
             event.preventDefault();
-            search(true);
         } else {
             $(this).data('timer', setTimeout(search, 500));
         }
     });
-    function search(force) {
-        var existingSearch = $search.val();
-        if (!force && existingSearch.length < 1) {
-            return;
-        }
-        //console.log(existingSearch)
+    function search() {
         var $searchVal = $('#df').val();
-        searchEngine(['name'], $searchVal);
+        console.log($searchVal);
+        searchEngine($searchVal);
     }
 });
+
