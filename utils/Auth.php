@@ -20,6 +20,7 @@ class Auth
 
 		// gets instance of user model by searching with username or email($username)
 		$user = User::findByUsernameOrEmail($username);
+        var_dump($user);
 
 		// makes sure the instance returned is not empty
 		if ($user == null)
@@ -30,7 +31,9 @@ class Auth
 		}
 
 		// checks password submitted against hashed password
-		if (password_verify($password, $user->password))
+        var_dump($password);
+        var_dump($user->PASSWORD);
+		if (password_verify($password, $user->PASSWORD))
 		{
 
 			// sets session variables used for logged in user
@@ -40,7 +43,7 @@ class Auth
 			return true;
 		}
 
-		$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
+		$_SESSION['ERROR_MESSAGE'] = 'Login information was hello';
 		return false;
 	}
 

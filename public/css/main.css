@@ -1,0 +1,303 @@
+.nav-pills li a:hover {
+    color: black;
+    background-color: rebeccapurple;
+}
+.nav-pills li a:active {
+    color: black;
+    background-color: rebeccapurple;
+}
+
+.active1 {
+    background-color: green;
+    color: black;
+    border-radius: 4px;
+}
+.nav_container {
+    height: 100px;
+    /*background-color: orange;*/
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*right: 0;*/
+    /*float: top;*/
+    /*padding-bottom: 100px;*/
+}
+#nav {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+
+}
+
+.listItem {
+    color: rebeccapurple;
+    font-weight: bold;
+}
+/*positions nav twirl icons */
+ul.social-network {
+    list-style: none;
+    display: inline;
+    margin-left:0 !important;
+    padding: 0;
+}
+ul.social-network li {
+    display: inline;
+    margin: 0 5px;
+}
+
+/*
+===========================
+login and register form
+===========================
+*/
+
+
+#body-register {
+    padding-top: 90px;
+}
+.panel-login {
+    border-color: #ccc;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+}
+.panel-login>.panel-heading {
+    color: rebeccapurple;
+    background-color: #fff;
+    border-color: #fff;
+    text-align:center;
+}
+.panel-login>.panel-heading a{
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+    font-size: 15px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.panel-login>.panel-heading a.active{
+    color: #029f5b;
+    font-size: 18px;
+}
+.panel-login>.panel-heading hr{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    clear: both;
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
+    background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+    background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+    background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+}
+.panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+    height: 35px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.panel-login input:hover,
+.panel-login input:focus {
+    outline:none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-color: #ccc;
+}
+.btn-login {
+    background-color: #1CB94E;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border-color: #1CB94A;
+}
+.btn-login:hover,
+.btn-login:focus {
+    color: #fff;
+    background-color: #53A3CD;
+    border-color: #53A3CD;
+}
+.forgot-password {
+    text-decoration: underline;
+    color: rebeccapurple;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+    text-decoration: underline;
+    color: #666;
+}
+
+.btn-register {
+    background-color: #1CB94E;
+    outline: none;
+    color: rebeccapurple;
+    font-size: 14px;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border-color: #1CB94A;
+}
+.btn-register:hover,
+.btn-register:focus {
+    color: #fff;
+    background-color: #1CA347;
+    border-color: #1CA347;
+}
+
+
+/*
+========================
+Custom login form Css
+=======================
+*/
+
+#blackpanel1, #blackpanel2 {
+    background-color: black;
+    border: none;
+}
+#login-submit, #register-submit{
+    background-color: black;
+    color: rebeccapurple;
+}
+
+#login-submit:hover, #register-submit:hover {
+    background-color: rebeccapurple;
+    color:black;
+}
+
+
+#remember {
+    color: rebeccapurple;
+}
+
+
+.greenInput {
+    background-color: rebeccapurple;
+    color: black;
+
+}
+.greenInput::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: black;
+    opacity: .9;
+}
+.greenInput::-moz-placeholder { /* Firefox 19+ */
+    color: black;
+    opacity: .9;
+}
+.greenInput:-ms-input-placeholder { /* IE 10+ */
+    color: black;
+    opacity: .9;
+}
+.greenInput:-moz-placeholder { /* Firefox 18- */
+    color: black;
+    opacity: .9;
+}
+.login {
+    /*position: absolute;*/
+    padding-top: 15%;
+    height: 850px;
+    /*margin-bottom: 2%;*/
+}
+.btn {
+    background-color: rebeccapurple;
+    border: none;
+}
+
+
+
+/* search bar css*/
+
+#custom-search-input {
+    margin:0;
+    margin-top: 50px;
+    padding: 0;
+}
+
+#custom-search-input .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#custom-search-input button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color:#D9230F;
+}
+
+.search-query:focus + button {
+    z-index: 3;
+}
+
+/*=========deck builder css*/
+
+#sidebar-wrapper {
+    top: 0px;
+    left: -200px;
+    width: 225px;
+    background-color: rebeccapurple;
+    color: white;
+    position: fixed;
+    height: 100%;
+    z-index: 1;
+}
+.sidebar-nav {
+    position: absolute;
+    top: 100px;
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    list-style: none;
+}
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 50px;
+}
+.sidebar-nav li a {
+    color: black;
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+}
+.sidebar-nav li a:hover {
+    background: rgba(255,255,255,0.25);
+    color: white;
+    text-decoration: none;
+}
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+    text-decoration: none;
+}
+#sidebar-wrapper.sidebar-toggle {
+    transition: all 0.3s ease-out;
+    margin-left: -200px;
+}
+@media (min-width: 768px) {
+    #sidebar-wrapper.sidebar-toggle {
+        transition: 0s;
+        left: 200px;
+    }
+}

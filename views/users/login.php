@@ -1,50 +1,80 @@
-<div class="container">
-
-	<section id="login">
-
-		<div class="row">
-
-			<h1 class="section-title">Login To OooLister</h1>
-
-			<?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
-                <div class="alert alert-danger">
-                    <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
-                </div>
-                <?php unset($_SESSION['ERROR_MESSAGE']); ?>
-            <?php endif; ?>
-            <?php if (isset($_SESSION['SUCCESS_MESSAGE'])) : ?>
-                <div class="alert alert-success">
-                    <p class="success"><?= $_SESSION['SUCCESS_MESSAGE']; ?></p>
-                </div>
-                <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
-            <?php endif; ?>
-
-			<div class="col-md-6 col-md-offset-3">
-
-				<p>Login with your email/username and password</p>
-
-				<form method="POST" action="" data-validation data-required-message="This field is required">
-
-					<div class="form-group">
-					    <input type="text" class="form-control" id="email_user" name="email_user" placeholder="Email or Username" data-required>
-					</div>
-					<div class="form-group">
-					    <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
-					</div>
+<div class="container-fluid login parallax-window" data-parallax="scroll" data-image-src="/img/BRM.jpg">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="panel panel-login" id="blackpanel1">
+				<div class="panel-heading" id="blackpanel2">
 					<div class="row">
-						<div class="col-sm-6">
-							<button type="submit" class="btn btn-primary">Login</button>
+						<div class="col-xs-6">
+							<a href="#"  style="color: rebeccapurple;" id="login-form-link">LogIn</a>
 						</div>
-						<div class="col-sm-6 text-right">
-							<a href="/signup" class="btn btn-success">Go To Signup</a>
+						<div class="col-xs-6">
+							<a href="#" style="color: rebeccapurple;" id="register-form-link">Register</a>
 						</div>
 					</div>
-				</form>
-
+					<hr>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-lg-12">
+							<form id="login-form" action="" method="post" role="form" style="display: block;">
+								<div class="form-group">
+									<input style="border: none;" type="text" name="username" id="username" tabindex="1" class="form-control greenInput" placeholder="Username" value="">
+								</div>
+								<div class="form-group">
+									<input style="border: none;" type="password" name="password" id="password" tabindex="2" class="form-control greenInput" placeholder="Password">
+								</div>
+								<div class="form-group text-center">
+									<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+									<label id="remember" for="remember"> Remember Me</label>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6 col-sm-offset-3">
+											<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="LogIn">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="text-center">
+<!--												<a style="color: rebeccapurple;" href="#" tabindex="5" class="forgot-password">Forgot Password?</a>-->
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+							<form id="register-form" action="/register" method="post" role="form" style="display: none;">
+								<div class="form-group">
+									<input style="border: none;" type="text" name="registerName" id="name" tabindex="1" class="form-control greenInput" placeholder="Name" value="">
+								</div>
+								<div class="form-group">
+									<input style="border: none;" type="text" name="username" id="name" tabindex="1" class="form-control greenInput" placeholder="Name" value="">
+								</div>
+								<div class="form-group">
+									<input style="border: none;" type="text" name="username" id="username" tabindex="1" class="form-control greenInput" placeholder="Username" value="">
+								</div>
+								<div class="form-group">
+									<input style="border: none;" type="email" name="email" id="email" tabindex="1" class="form-control greenInput" placeholder="Email Address" value="">
+								</div>
+								<div class="form-group">
+									<input style="border: none;" type="password" name="password" id="password" tabindex="2" class="form-control greenInput" placeholder="Password">
+								</div>
+								<div class="form-group">
+									<input style="border: none;" type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control greenInput" placeholder="Confirm Password">
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6 col-sm-offset-3">
+											<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
 			</div>
-
 		</div>
-
-	</section>
-
+	</div>
 </div>
