@@ -12,7 +12,7 @@
                 </ul>
 
                 <ul class="nav nav-pills" id="nav">
-                    <li role="presentation" class="navbutton" id="home"><a class="listItem" href="/">
+                    <li role="presentation" class="navbutton" id="user-edit"><a class="listItem" href="user-edit">
                             <?= "Hello " . $_SESSION['IS_LOGGED_IN'] ?></a></li>
                     <!-- <li role="presentation" class="navbutton blogProjects"><a class="listItem" href="blog.html">Blog</a></li> -->
                     <li role="presentation" class="navbutton" id="decks"><a class="listItem" href="decks">Decks</a></li>
