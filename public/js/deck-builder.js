@@ -40,11 +40,12 @@ $(document).ready(function () {
 ///////////////////pick a class function//////////
 var $deckEditor = $('#deckEditor');
 var $pickaclass = $('#pickaclass');
+console.log($pickaclass);
 var classes = ['Druid', 'Hunter', 'Mage', 'Paladin', 'Priest', 'Rogue', 'Shaman', 'Warlock', 'Warrior'];
 $(document).ready(function () {
 
 
-    $($pickaclass).onclick(function () {
+    $pickaclass.click(function () {
         $deckEditor.html('');
         classes.forEach(function (e, i) {
             $deckEditor.append("<li><a>" + e + "</a></li>");

@@ -49,9 +49,6 @@
 									<input style="border: none;" type="text" name="registerName" id="name" tabindex="1" class="form-control greenInput" placeholder="Name" value="">
 								</div>
 								<div class="form-group">
-									<input style="border: none;" type="text" name="username" id="name" tabindex="1" class="form-control greenInput" placeholder="Name" value="">
-								</div>
-								<div class="form-group">
 									<input style="border: none;" type="text" name="username" id="username" tabindex="1" class="form-control greenInput" placeholder="Username" value="">
 								</div>
 								<div class="form-group">

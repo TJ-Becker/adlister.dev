@@ -3,11 +3,11 @@
 require_once __DIR__ . '/../utils/helper_functions.php';
 function pageController()
 {
-    $input = new Input;
+//    $input = new Input;
     $user = new User;
-    $auth = new Auth;
+//    $auth = new Auth;
 
-    $auth->attempt($input->get('username'), $input->get('password'));
+    Auth::attempt(Input::get('username'), Input::get('password'));
 
     // defines array to be returned and extracted for view
     $data = [];
@@ -28,38 +28,51 @@ function pageController()
     switch ($request) {
 
         case '/':
-            if ($auth->check()) {
+            if (Auth::check()) {
                 $main_view = '../views/hearth/deck-builder.php';
             } else {
                 $main_view = '../views/users/login.php';
             }
             break;
         case '/deck-builder':
-            if ($auth->check()) {
+            if (Auth::check()) {
                 $main_view = '../views/hearth/deck-builder.php';
             } else {
                 $main_view = '../views/users/login.php';
             }
             break;
         case '/logout':
-            $auth->logout();
+            Auth::logout();
             header('Location: /');
+            break;
+        case '/user-edit':
+            if (Auth::check()) {
+                $main_view = '../views/users/edit.php';
+            } else {
+                $main_view = '../views/users/login.php';
+            }
             break;
         case '/register':
 
             if (
-                $input->has('registerName') &&
-                $input->has('username') &&
-                $input->has('email') &&
-                $input->has('password') &&
-                $input->has('confirm-password') &&
-                ($input->get('confirm-password') === $input->get('password'))
+                Input::has('registerName') &&
+                Input::has('username') &&
+                Input::has('email') &&
+                Input::has('password') &&
+                Input::has('confirm-password') &&
+                (Input::get('confirm-password') === Input::get('password'))
             ) {
-                $user->NAME = $input->get('registerName');
-                $user->username = $input->get('username');
-                $user->email = $input->get('email');
-                $user->password = $input->get('password');
+                $user->NAME = Input::get('registerName');
+                $user->username = Input::get('username');
+                $user->email = Input::get('email');
+                $user->password = Input::get('password');
                 $user->save();
+
+                $_SESSION['NAME'] = Input::get('registerName');
+                $_SESSION['username'] = Input::get('username');
+                $_SESSION['email'] = Input::get('email');
+                $_SESSION['password'] = $user->password;
+                header('Location: /');
             }
             $main_view = '../views/users/login.php';
             break;
