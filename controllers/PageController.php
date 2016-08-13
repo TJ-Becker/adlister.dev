@@ -1,9 +1,13 @@
 <?php
 
 require_once __DIR__ . '/../utils/helper_functions.php';
-
 function pageController()
 {
+    $input = new Input;
+    $user = new User;
+    $auth = new Auth;
+
+    $auth->attempt($input->get('username'), $input->get('password'));
 
     // defines array to be returned and extracted for view
     $data = [];
@@ -24,11 +28,42 @@ function pageController()
     switch ($request) {
 
         case '/':
-            $main_view = '../views/users/login.php';
+            if ($auth->check()) {
+                $main_view = '../views/hearth/deck-builder.php';
+            } else {
+                $main_view = '../views/users/login.php';
+            }
             break;
         case '/deck-builder':
-            $main_view = '../views/hearth/deck-builder.php';
+            if ($auth->check()) {
+                $main_view = '../views/hearth/deck-builder.php';
+            } else {
+                $main_view = '../views/users/login.php';
+            }
             break;
+        case '/logout':
+            $auth->logout();
+            header('Location: /');
+            break;
+        case '/register':
+
+            if (
+                $input->has('registerName') &&
+                $input->has('username') &&
+                $input->has('email') &&
+                $input->has('password') &&
+                $input->has('confirm-password') &&
+                ($input->get('confirm-password') === $input->get('password'))
+            ) {
+                $user->NAME = $input->get('registerName');
+                $user->username = $input->get('username');
+                $user->email = $input->get('email');
+                $user->password = $input->get('password');
+                $user->save();
+            }
+            $main_view = '../views/users/login.php';
+            break;
+
         default:    // displays 404 if route not specified above
             $main_view = '../views/404.php';
             break;

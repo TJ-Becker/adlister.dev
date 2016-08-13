@@ -16,7 +16,6 @@ $card->deck_id = 8;
 $card->save();
 var_dump($card);
 
-
 $card = new Card;
 $card->class_id = 7;
 $card->name = 'Rockbiter Weapon';
